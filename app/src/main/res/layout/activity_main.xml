@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.wear.widget.BoxInsetLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/box_inset_layout_padding"
+    tools:context=".MainActivity"
+    tools:deviceIds="wear">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/inner_frame_layout_padding"
+        app:layout_boxedEdges="all">
+
+        <Button
+            android:id="@+id/setWaypointButton"
+            android:layout_width="75dp"
+            android:layout_height="66dp"
+            android:background="@android:drawable/ic_input_add"
+            android:backgroundTint="#CDDC39"
+            android:minHeight="36dp"
+            android:onClick="addWayPoint"
+            android:text="@string/set_waypoint"
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.807"
+            app:layout_constraintStart_toEndOf="@+id/deleteWaypointButton"
+            app:layout_constraintTop_toBottomOf="@+id/indexInput"
+            tools:layout_conversion_absoluteHeight="48dp"
+            tools:layout_conversion_absoluteWidth="88dp" />
+
+        <Button
+            android:id="@+id/runProgramButton"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:backgroundTint="#CDDC39"
+            android:onClick="executeWaypoints"
+            android:text="@string/run_program"
+            android:textColor="#455A64"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/deleteWaypointButton"
+            android:layout_width="67dp"
+            android:layout_height="65dp"
+            android:background="@android:drawable/ic_delete"
+            android:onClick="deleteWayPoint"
+            android:text="@string/delete_waypoint"
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toStartOf="@+id/indexInput"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/indexInput"
+            tools:layout_conversion_absoluteHeight="48dp"
+            tools:layout_conversion_absoluteWidth="88dp" />
+
+        <EditText
+            android:id="@+id/indexInput"
+            android:layout_width="122dp"
+            android:layout_height="48dp"
+            android:autofillHints="-1"
+            android:ems="10"
+            android:inputType="numberSigned"
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.wear.widget.BoxInsetLayout>
